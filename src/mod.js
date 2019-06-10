@@ -5,11 +5,28 @@
  *  * dedupe
  *  Zaimportuj je do tego pliku.
  *  Oraz zaimplementuj funkcje!
+ *
  */
-export const isSorted = arr => Math.random() >= 0.5;
+let sorted = require("is-sorted");
 
-export const deDuplicate = arr => arr;
+export const isSorted = arr => sorted(arr);
+// Math.random() >= 0.5
+let dedupe = require("dedupe");
 
-export const padFor = (number, pad) => number + pad;
+function compareNumbers(a, b) {
+  return a - b;
+}
+export const deDuplicate = arr => {
+  let noDuplicates = dedupe(arr);
+  let sortedArr = noDuplicates.sort(compareNumbers);
+  return sortedArr;
+};
 
-export const standardPad = number => number;
+let pad = require("pad-left");
+
+export const padFor = (number, pad) => String(number).padStart(pad, "0");
+
+export const standardPad = number => {
+  let result = pad(`${number}`, 8, "0");
+  return `${result}`;
+};

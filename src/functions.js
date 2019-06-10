@@ -1,39 +1,31 @@
 /**
  * Przepisz poniższe funkcje na składnię ES6. Uwaga, funkcje muszą przechodzić testy!
  */
-export function cookie() {
-  return "Gimmie some cookie!";
-}
+export const cookie = () => "Gimmie some cookie!";
 
-export var sqr = function(x) {
-  return x * x;
-};
+export const sqr = x => x * x;
 
-export var mathPower = function(base, exponent) {
-  var result = 1;
-  for (var count = 0; count < exponent; count++) {
+export const mathPower = (base, exponent) => {
+  let result = 1;
+  for (let count = 0; count < exponent; count++) {
     result *= base;
   }
   return result;
 };
 
-export function formatUrl(url) {
-  return "http://" + url;
-}
+export const formatUrl = url => {
+  return `http://${url}`;
+};
 
-export function shout(string) {
+export const shout = string => {
   return string.toUpperCase();
-}
+};
 
-export function formatHTML(elementNumber) {
-  var emphasis = "<em>" + elementNumber + " paragraphs!</em>";
+export const formatHTML = elementNumber => {
+  let emphasis = "<em>" + elementNumber + " paragraphs!</em>";
   return "<p>All new content for " + emphasis + "</p>";
-}
+};
 
-export function triple(first, second, third) {
-  if (first === undefined) first = 1;
-  if (second === undefined) second = 2;
-  if (third === undefined) third = 3;
-
+export function triple(first = 1, second = 2, third = 3) {
   return first * second * third;
 }

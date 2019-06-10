@@ -8,7 +8,10 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "jest": "23.6.0"
+    "dedupe": "3.0.1",
+    "is-sorted": "1.0.5",
+    "jest": "23.6.0",
+    "pad-left": "2.1.0"
   },
   "devDependencies": {
     "@types/jest": "23.3.7",
